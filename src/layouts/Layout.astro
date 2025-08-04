@@ -1,0 +1,51 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Main from "../components/Main.astro";
+import Card from "../components/Card.astro";
+export interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <div
+      class="fixed top-0 z-[-2] h-full w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+    <Header />
+    <div class="flex-grow flex flex-col">
+      <Main class="flex-shrink-0">
+        <slot />
+      </Main>
+      <section
+        class="flex flex-col justify-center items-center py-10"
+        id="habilidades"
+      >
+        <div class="flex space-x-6">
+          <Card src="/src/assets/html_Logo.png" alt="html logo" />
+          <Card src="/src/assets/css_Logo.png" alt="css logo" />
+          <Card src="/src/assets/js_Logo.jpg" alt="javascript logo" />
+          <Card src="/src/assets/react_Logo.png" alt="react logo" />
+        </div>
+        <div class="flex space-x-6 pt-6">
+          <Card src="/src/assets/tailwind_Logo.png" alt="tailwind logo" />
+          <Card src="/src/assets/astro_Logo.png" alt="astro logo" />
+          <Card src="/src/assets/vite_Logo.png" alt="vite logo" />
+        </div>
+      </section>
+    </div>
+    <section id="contacto" class="min-h-72">
+      <Footer />
+    </section>
+  </body>
+</html>

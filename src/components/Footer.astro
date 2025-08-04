@@ -1,0 +1,25 @@
+---
+import FooterLinks from "../components/FooterLinks.astro";
+import Form from "../components/Form.astro";
+---
+
+<footer class="flex w-full min-h-72 mt-auto bg-slate-950">
+  <div class="relative w-1/2 min-h-72">
+    <div
+      class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]"
+    >
+      <div class="p-8 h-full flex items-end">
+        <FooterLinks />
+      </div>
+    </div>
+  </div>
+  <div class="relative w-1/2">
+    <div
+      class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]"
+    >
+      <div class="p-8 h-full flex items-end">
+        <Form />
+      </div>
+    </div>
+  </div>
+</footer>

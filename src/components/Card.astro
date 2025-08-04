@@ -1,0 +1,11 @@
+---
+const { src, alt = "" } = Astro.props;
+---
+
+<div
+  class="max-w-3xs rounded-3xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300 relative z-10"
+>
+  <figure>
+    <img src={src} alt={alt} />
+  </figure>
+</div>
